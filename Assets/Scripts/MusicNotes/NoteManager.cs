@@ -13,8 +13,9 @@ public class NoteManager : MonoBehaviour
     //This dictionary carries all of the possible notes that could be spawned
     [SerializeField] private Dictionary<string, GameObject> _noteObjects = new Dictionary<string, GameObject>();
 
-    //This list carries all of the possible places a note could spawn from
-    [SerializeField] private List<Transform> _spawnerObjects = new List<Transform>();
+    //These lists carry all of the possible places a note could spawn from
+    [SerializeField] private List<Transform> _leftSpawnerObjects = new List<Transform>();
+    [SerializeField] private List<Transform> _rightSpawnerObjects = new List<Transform>();
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +29,29 @@ public class NoteManager : MonoBehaviour
         }
     }
 
-    private void SpawnNote(string _noteKey, int _spawnerKey)
+    public void SpawnNote(bool _left, string _noteKey, int _spawnerKey)
     {
         //Creating the references for the spawned object and position
         GameObject _newObject = _noteObjects[_noteKey];
-        Vector3 _spawnerPosition = _spawnerObjects[_spawnerKey].position;
+
+        Vector3 _spawnerPosition;
+        Transform _spawnerTransform;
+
+        if (_left)
+        {
+             _spawnerTransform = _leftSpawnerObjects[_spawnerKey];
+            
+        }
+        else
+        {
+             _spawnerTransform = _rightSpawnerObjects[_spawnerKey];
+        }
+        
+        _spawnerPosition = _spawnerTransform.position;
 
         //Spawning the object at position
-        GameObject _newNote = GameObject.Instantiate(_noteObjects["red"], _spawnerPosition, Quaternion.identity);
+         GameObject _newNote = GameObject.Instantiate(_noteObjects["red"], _spawnerPosition, Quaternion.identity);
+        _newNote.transform.SetParent(_spawnerTransform);
+        _newNote.transform.localPosition = Vector3.zero;
     }
 }
