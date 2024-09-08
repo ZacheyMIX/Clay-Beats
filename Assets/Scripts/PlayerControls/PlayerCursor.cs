@@ -11,9 +11,12 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField]
     float cursorSpeed = 1000f;
     [SerializeField]
-    float maxWidth = 100;
+    float maxWidth;
     [SerializeField]
-    float minWidth = -100;
+    float minWidth;
+    [SerializeField]
+    float defaultPos;
+
 
     Vector2 move;
 
@@ -44,7 +47,7 @@ public class PlayerCursor : MonoBehaviour
     {
         //Moves Cursor based on restrictions
         Vector2 m = new Vector2(move.x, 0) * Time.deltaTime * cursorSpeed;
-        if (cursor.anchoredPosition.x + m.x > minWidth && cursor.anchoredPosition.x + m.x < maxWidth)
+        if (cursor.anchoredPosition.x + m.x > defaultPos + minWidth && cursor.anchoredPosition.x + m.x < defaultPos + maxWidth)
         {
             cursor.transform.Translate(m, Space.World);
         }
