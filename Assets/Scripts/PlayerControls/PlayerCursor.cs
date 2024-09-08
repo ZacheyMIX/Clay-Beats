@@ -27,9 +27,6 @@ public class PlayerCursor : MonoBehaviour
 
         //Controlls need context in order to perform calls through lambda values
         controls.Gameplay.Action.performed += ctx => Action();
-
-        controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
-        controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
     }
 
     //Handles Note Interaction
@@ -44,12 +41,6 @@ public class PlayerCursor : MonoBehaviour
     
     private void Update()
     {
-        //Moves Cursor based on restrictions
-        Vector2 m = new Vector2(move.x, 0) * Time.deltaTime * cursorSpeed;
-        if (cursor.anchoredPosition.x + m.x > defaultPos + minWidth && cursor.anchoredPosition.x + m.x < defaultPos + maxWidth)
-        {
-            cursor.transform.Translate(m, Space.World);
-        }
     }
 
     private void OnEnable()
