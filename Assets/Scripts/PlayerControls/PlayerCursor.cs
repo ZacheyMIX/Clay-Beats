@@ -20,13 +20,12 @@ public class PlayerCursor : MonoBehaviour
 
     Vector2 move;
 
-    public bool actionPress = false;
-
 
     private void Awake()
     {
         controls = new PlayerControlls();
 
+        //Controlls need context in order to perform calls through lambda values
         controls.Gameplay.Action.performed += ctx => Action();
 
         controls.Gameplay.Move.performed += ctx => move = ctx.ReadValue<Vector2>();
