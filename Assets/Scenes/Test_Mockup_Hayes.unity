@@ -647,7 +647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264810488}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -1544,7 +1544,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3745481490688548612, guid: 2b6683c3851bce242897e453dd4747d6, type: 3}
       propertyPath: m_Name
-      value: LeftSpawnPost3
+      value: RightSpawnPos3
       objectReference: {fileID: 0}
     - target: {fileID: 3745481490688548612, guid: 2b6683c3851bce242897e453dd4747d6, type: 3}
       propertyPath: m_IsActive
@@ -1937,7 +1937,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1821120521082798171, guid: 5bace7ff03071fc4c8cfe3839c9e70ec, type: 3}
       propertyPath: m_Name
-      value: LeftSpawnPos1
+      value: RightSpawnPos1
       objectReference: {fileID: 0}
     - target: {fileID: 1821120521082798171, guid: 5bace7ff03071fc4c8cfe3839c9e70ec, type: 3}
       propertyPath: m_IsActive
@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 1065242906}
   - component: {fileID: 1065242905}
   m_Layer: 5
-  m_Name: LeftSideLanes (1)
+  m_Name: RightSideLanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2151,7 +2151,7 @@ GameObject:
   - component: {fileID: 1070123120}
   - component: {fileID: 1070123119}
   m_Layer: 5
-  m_Name: LeftSpawner1
+  m_Name: RightSpawner1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2334,7 +2334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1172773759}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
@@ -2374,7 +2374,7 @@ GameObject:
   - component: {fileID: 1277652722}
   - component: {fileID: 1277652721}
   m_Layer: 5
-  m_Name: LeftSpawner2
+  m_Name: RightSpawner2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2552,7 +2552,7 @@ GameObject:
   - component: {fileID: 1548025651}
   - component: {fileID: 1548025650}
   m_Layer: 5
-  m_Name: LeftSpawner3
+  m_Name: RightSpawner3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2668,13 +2668,13 @@ MonoBehaviour:
   - red
   - yellow
   _leftSpawnerObjects:
-  - {fileID: 28035771}
+  - {fileID: 613400080}
   - {fileID: 7697692675657964844}
-  - {fileID: 1347058477}
+  - {fileID: 8309063040530566774}
   _rightSpawnerObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 730450519}
+  - {fileID: 1707620578}
+  - {fileID: 573072699}
 --- !u!114 &1553009212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2927,7 +2927,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 508308776968208509, guid: 7cc0fb972707979408f647effc50f816, type: 3}
       propertyPath: m_Name
-      value: LeftSpawnPos2
+      value: RightSpawnPos2
       objectReference: {fileID: 0}
     - target: {fileID: 508308776968208509, guid: 7cc0fb972707979408f647effc50f816, type: 3}
       propertyPath: m_IsActive
@@ -3049,7 +3049,7 @@ GameObject:
   - component: {fileID: 1923317225}
   - component: {fileID: 1923317224}
   m_Layer: 5
-  m_Name: LeftSpawner
+  m_Name: RightSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

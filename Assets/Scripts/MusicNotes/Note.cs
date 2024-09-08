@@ -9,22 +9,25 @@ public class Note : MonoBehaviour
     [Header("Movement Variables")]
     [SerializeField] private bool _falling = true;
     [SerializeField] private float _fallSpeed = 1f;
-
-    [Header("Note Characteristics")]
-    //each color note has a unique int identifier
-    //0=green, 1=red, 2=blue, 3=blue
-    public int _noteType;
-
-    private bool _hasFailed; 
+    private float _startPosY;
+    private bool _hasFailed;
+    private float _currentSpeed;
   
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _startPosY = transform.position.y;
+        _currentSpeed = 0;
+    }
+
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
         if (_falling)
         {
             //these two lines control the downward lerping of a standard note!
-            float _newYPos = Mathf.Lerp(transform.position.y, -450, _fallSpeed * Time.deltaTime);
+            float _newYPos = Mathf.Lerp(_startPosY, -450, _currentSpeed);
+            _currentSpeed += _fallSpeed * Time.deltaTime;
             transform.position = new Vector3(transform.position.x, _newYPos, transform.position.z);
         }
 
