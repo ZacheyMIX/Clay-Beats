@@ -30,6 +30,7 @@ public class PlayerCursor : MonoBehaviour
         controls.Gameplay.Move.canceled += ctx => move = Vector2.zero;
     }
 
+    //Handles Note Interaction
     private void Action()
     {
         if(gameObject.GetComponent<CollisionManager>().canBePressed) 
