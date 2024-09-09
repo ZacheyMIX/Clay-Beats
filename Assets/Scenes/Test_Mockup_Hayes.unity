@@ -2895,11 +2895,14 @@ MonoBehaviour:
   - 3.1
   - 5.05
   - 7.9
+  - 7.9
   _spawnColors:
   - red
   - green
   - blue
+  - yellow
   _currentSongTime: 0
+  _noteSpeed: 0.2
 --- !u!114 &1553009213
 MonoBehaviour:
   m_ObjectHideFlags: 0

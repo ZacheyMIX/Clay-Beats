@@ -7,27 +7,50 @@ public class JsonMapper : MonoBehaviour
     //This is where we slot in the desired song map
     [SerializeField] private TextAsset _textJson;
 
+    [SerializeField] private string[] _spawnColors;
+    [SerializeField] private float[] _spawnTimes;
+
 
     [System.Serializable]
-    public class Player
+    public class Song
+    {
+        public string title;
+        public int duration;
+        public int bpm;
+    }
+
+    [System.Serializable]
+    public class SongWhole
+    {
+        public Song[] song;
+    }
+
+    public SongWhole _songData = new SongWhole();
+
+    [System.Serializable]
+    public class Note
     {
         public string name;
-        public int health;
-        public int mana;
+        public float midi;
+        public float time;
+        public float velocity;
+        public float duration;
     }
 
     [System.Serializable]
-    public class PlayerList
+    public class NoteList
     {
-        public Player[] player;
+        public Note[] notes; 
+    
     }
 
-    public PlayerList myPlayerList = new PlayerList();
+    public NoteList _noteList = new NoteList();
 
     // Start is called before the first frame update
     void Start()
     {
-        myPlayerList = JsonUtility.FromJson<PlayerList>(_textJson.text);
+        _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
+        _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
     }
 
     // Update is called once per frame

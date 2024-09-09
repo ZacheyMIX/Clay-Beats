@@ -1,20 +1,44 @@
 {
-	"player": [
+	"song": [
 		
 		{
-			"name": "Warrior",
-			"health": 100,
-			"mana": 20
+			"title": "testsong1",
+			"duration": 50,
+			"bpm": 100
 		},
 		{
-			"name": "Wizard",
-			"health": 40,
-			"mana": 80
+			"title": "testsong2",
+			"duration": 23,
+			"bpm": 100
 		},
 		{
-			"name": "Cleric",
-			"health": 80,
-			"mana": 40
+			"title": "testsong3",
+			"duration": 10,
+			"bpm": 100
 		}
-	]
+	],
+	"notes": [
+        {
+          "name": "C4",
+          "midi": 60,
+          "time": 0,
+          "velocity": 0.7874015748031497,
+          "duration": 0.3
+        },
+        {
+          "name": "D4",
+          "midi": 62,
+          "time": 1.2,
+          "velocity": 0.8188976377952756,
+          "duration": 0.30000000000000004
+        },
+        {
+          "name": "E5",
+          "midi": 76,
+          "time": 2.4,
+          "velocity": 0.7874015748031497,
+          "duration": 0.6000000000000001
+        }
+    ]
+
 }
