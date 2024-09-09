@@ -2624,6 +2624,7 @@ GameObject:
   - component: {fileID: 1553009210}
   - component: {fileID: 1553009211}
   - component: {fileID: 1553009212}
+  - component: {fileID: 1553009213}
   m_Layer: 0
   m_Name: NoteManager
   m_TagString: Untagged
@@ -2687,6 +2688,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd3f6464e8518e41a7e4130ac0cc305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _spawnTimes:
+  - 3.1
+  - 5.05
+  - 7.9
+  _currentSongTime: 0
+--- !u!114 &1553009213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553009209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810b815b86649d84097e0722808b8aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textJson: {fileID: 4900000, guid: 0b7f2cf50217add498fdf48e62458372, type: 3}
+  myPlayerList:
+    player: []
 --- !u!1 &1693482086
 GameObject:
   m_ObjectHideFlags: 0

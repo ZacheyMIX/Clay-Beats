@@ -6,38 +6,42 @@ using UnityEngine;
 
 public class NotePlayer : MonoBehaviour
 {
-    [SerializeField] private TextAsset _textJson;
     private NoteManager _noteManager;
+
+    [SerializeField] private List<float> _spawnTimes = new List<float>();
+    [SerializeField] private float _currentSongTime;
+
     
-    [System.Serializable]
-    public class Player
-    {
-        public string name;
-        public int health;
-        public int mana;
-    }
-
-    [System.Serializable]
-    public class PlayerList
-    {
-        public Player[] player;
     
-    }
-
-    public PlayerList myPlayerList = new PlayerList();
-
     // Start is called before the first frame update
     void Start()
     {
         _noteManager = GetComponent<NoteManager>();
 
-        myPlayerList = JsonUtility.FromJson<PlayerList>(_textJson.text);
     }
 
 
     // Update is called once per frame
     void Update()
     {
+        
+        if(_spawnTimes.Count > 0)
+        {
+            float _difference = Mathf.Abs(_currentSongTime - _spawnTimes[0]);
+            
+            if(_difference <= 0.01f)
+            {
+                _noteManager.SpawnNote(true, "red", 1);
+                _spawnTimes.RemoveAt(0);
+            }
+
+        }
+        
+
+        _currentSongTime += Time.deltaTime;
+        
+        
+        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _noteManager.SpawnNote(true, "red", 1);
