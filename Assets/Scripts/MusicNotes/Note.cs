@@ -8,11 +8,18 @@ public class Note : MonoBehaviour
 {
     [Header("Movement Variables")]
     [SerializeField] private bool _falling = true;
-    [SerializeField] private float _fallSpeed = 1f;
+    public float _fallSpeed = 1f;
     private float _startPosY;
     private bool _hasFailed;
     private float _currentSpeed;
   
+    
+    
+    public void SetFallSpeed(float _newSpeed)
+    {
+        _fallSpeed = _newSpeed;
+    }
+    
     private void Start()
     {
         _startPosY = transform.position.y;

@@ -20,7 +20,6 @@ public class JsonMapper : MonoBehaviour
     public class PlayerList
     {
         public Player[] player;
-
     }
 
     public PlayerList myPlayerList = new PlayerList();

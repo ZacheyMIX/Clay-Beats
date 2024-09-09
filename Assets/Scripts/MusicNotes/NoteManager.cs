@@ -11,11 +11,13 @@ public class NoteManager : MonoBehaviour
     [SerializeField] private string[] _stringsPool;
 
     //This dictionary carries all of the possible notes that could be spawned
-    [SerializeField] private Dictionary<string, GameObject> _noteObjects = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> _noteObjects = new Dictionary<string, GameObject>();
 
-    //These lists carry all of the possible places a note could spawn from
-    [SerializeField] private List<Transform> _leftSpawnerObjects = new List<Transform>();
-    [SerializeField] private List<Transform> _rightSpawnerObjects = new List<Transform>();
+    //This list carries all of the possible places a note could spawn from
+    [SerializeField] private List<Transform> _spawnerObjects = new List<Transform>();
+
+    //This dictionary carries the combined notes with their spawn locations!
+    private Dictionary<string, Transform> _spawnLocations = new Dictionary<string, Transform>();
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +27,15 @@ public class NoteManager : MonoBehaviour
         foreach(GameObject note in _notesPool)
         {
             _noteObjects.Add(_stringsPool[i], note);
+            _spawnLocations.Add(_stringsPool[i], _spawnerObjects[i]);
             i++;
         }
+
+        i = 0;
+
     }
 
-    public void SpawnNote(bool _left, string _noteKey, int _spawnerKey)
+    public void SpawnNote(string _noteKey, float _noteSpeed)
     {
         //Creating the references for the spawned object and position
         GameObject _newObject = _noteObjects[_noteKey];
@@ -37,21 +43,16 @@ public class NoteManager : MonoBehaviour
         Vector3 _spawnerPosition;
         Transform _spawnerTransform;
 
-        if (_left)
-        {
-             _spawnerTransform = _leftSpawnerObjects[_spawnerKey];
-            
-        }
-        else
-        {
-             _spawnerTransform = _rightSpawnerObjects[_spawnerKey];
-        }
-        
+        _spawnerTransform = _spawnLocations[_noteKey];
         _spawnerPosition = _spawnerTransform.position;
 
         //Spawning the object at position
-         GameObject _newNote = GameObject.Instantiate(_noteObjects["red"], _spawnerPosition, Quaternion.identity);
+         GameObject _newNote = GameObject.Instantiate(_noteObjects[_noteKey], _spawnerPosition, Quaternion.identity);
         _newNote.transform.SetParent(_spawnerTransform);
         _newNote.transform.localPosition = Vector3.zero;
+
+        //Setting the speed of each note to match the song!
+        Note _noteScript = _newNote.GetComponent<Note>();
+        _noteScript.SetFallSpeed(_noteSpeed);
     }
 }
