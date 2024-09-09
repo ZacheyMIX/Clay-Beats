@@ -2,30 +2,36 @@ using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using LitJson;
 
 public class NotePlayer : MonoBehaviour
 {
-    private string _jsonString;
+    [SerializeField] private TextAsset _textJson;
     private NoteManager _noteManager;
     
+    [System.Serializable]
+    public class Player
+    {
+        public string name;
+        public int health;
+        public int mana;
+    }
+
+    [System.Serializable]
+    public class PlayerList
+    {
+        public Player[] player;
+    
+    }
+
+    public PlayerList myPlayerList = new PlayerList();
+
     // Start is called before the first frame update
     void Start()
     {
         _noteManager = GetComponent<NoteManager>();
 
-       // SongData _songData = new SongData();
-       // _songData._timeSignature = 0.75f;
-       // _songData._duration = 30f;
-       // _songData._bpm = 100;
-
-      //  string json = JsonUtility.ToJson(_songData);
-       // Debug.Log(json);
-
-      //  SongData _loadedSongData = JsonUtility.FromJson<SongData>(json);
-      //  Debug.Log(_loadedSongData);
-
-      _jsonString = File.ReadAllText(Application.dataPath + "/Scripts/JSON/Test1.json");
-        Debug.Log(_jsonString);
+        myPlayerList = JsonUtility.FromJson<PlayerList>(_textJson.text);
     }
 
 
@@ -38,13 +44,6 @@ public class NotePlayer : MonoBehaviour
         }
     }
 
-
-    private class SongData
-    {
-        public float _timeSignature;
-        public float _duration;
-        public float _bpm;
-    }
     //template for calling note function! 
     //(bool _left, string _noteKey, int _spawnerKey)
 
