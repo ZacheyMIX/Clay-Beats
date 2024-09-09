@@ -49,7 +49,7 @@ public class JsonMapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
+       // _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
         _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
     }
 

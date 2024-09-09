@@ -2916,8 +2916,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _textJson: {fileID: 4900000, guid: 0b7f2cf50217add498fdf48e62458372, type: 3}
-  myPlayerList:
-    player: []
+  _spawnColors: []
+  _spawnTimes: []
+  _songData:
+    song: []
+  _noteList:
+    notes: []
 --- !u!1 &1693482086
 GameObject:
   m_ObjectHideFlags: 0
