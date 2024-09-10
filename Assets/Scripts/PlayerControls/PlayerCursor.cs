@@ -92,12 +92,16 @@ public class PlayerCursor : MonoBehaviour
         currentObject = other.gameObject;
         if (other.gameObject.tag == "AButton")
             ACanBePressed = true;
+            SoundManager.PlaySound(SoundType.MISS);
         else if(other.gameObject.tag == "BButton")
             BCanBePressed = true;
+            SoundManager.PlaySound(SoundType.MISS);
         else if (other.gameObject.tag == "XButton")
             XCanBePressed = true;
+            SoundManager.PlaySound(SoundType.MISS);
         else if (other.gameObject.tag == "YButton")
             YCanBePressed = true;
+            SoundManager.PlaySound(SoundType.MISS);
     }
 
     private void OnTriggerExit(Collider other)
@@ -105,12 +109,16 @@ public class PlayerCursor : MonoBehaviour
          
         if (other.gameObject.tag == "AButton")
             ACanBePressed = false;
+            SoundManager.PlaySound(SoundType.LPAW);
         else if (other.gameObject.tag == "BButton")
             BCanBePressed = false;
+            SoundManager.PlaySound(SoundType.LPAW);
         else if (other.gameObject.tag == "XButton")
             XCanBePressed = false;
+            SoundManager.PlaySound(SoundType.LPAW);
         else if (other.gameObject.tag == "YButton")
             YCanBePressed = false;
+            SoundManager.PlaySound(SoundType.LPAW);
     }
 
     private void OnEnable()
