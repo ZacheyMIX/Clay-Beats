@@ -6,14 +6,14 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 
-public class Score : MonoBehaviour
+public class Score
 {
 
-    public string scoreDisplay { 
-        get 
+    public string scoreDisplay {
+        get
         {
             if (isPlaying)
-                return $"{(int)(currentScore / maxScore) * 100}%";
+                return $"{(int)(((float)currentScore / maxScore) * 100)}%";
             else
                 return "currently not playing a song";
         }
@@ -23,11 +23,11 @@ public class Score : MonoBehaviour
     private int maxScore;
     private int currentScore;
 
+    Animation an;
 
-    private void Start()
+    public Score(Animation textAnimation)
     {
-        PlayerCursor pc = GameObject.Find("P1Cursor").GetComponent<PlayerCursor>();
-        pc.OnNoteHitted.AddListener(NoteHitted);
+        an = textAnimation;
     }
 
     /// <summary>
@@ -45,10 +45,29 @@ public class Score : MonoBehaviour
     public void NoteHitted() 
     {
         currentScore++;
+        an?.Play();
     }
 
     public void EndSong() 
     {
         isPlaying = false;
     }
+
+
+#if UNITY_INCLUDE_TESTS
+
+    /// <summary>
+    /// tests for adding score and its animation
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator TestNoteHitted()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(3);
+            NoteHitted();
+        }
+    }
+
+#endif
 }
