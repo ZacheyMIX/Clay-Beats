@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerCursor : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerCursor : MonoBehaviour
     bool XCanBePressed;
     bool YCanBePressed;
     GameObject currentObject;
+
+    [HideInInspector]
+    public UnityEvent OnNoteHitted;
 
 
     private void Awake()
@@ -35,6 +39,8 @@ public class PlayerCursor : MonoBehaviour
     {
         if(ACanBePressed) 
         {
+            OnNoteHitted?.Invoke();
+
             Debug.Log("Hit");
             ACanBePressed = false;
             Destroy(currentObject);
@@ -44,6 +50,8 @@ public class PlayerCursor : MonoBehaviour
     {
         if (BCanBePressed)
         {
+            OnNoteHitted?.Invoke();
+
             Debug.Log("Hit");
             BCanBePressed = false;
             Destroy(currentObject);
@@ -53,6 +61,8 @@ public class PlayerCursor : MonoBehaviour
     {
         if (XCanBePressed)
         {
+            OnNoteHitted?.Invoke();
+
             Debug.Log("Hit");
             XCanBePressed = false;
             Destroy(currentObject);
@@ -62,6 +72,8 @@ public class PlayerCursor : MonoBehaviour
     {
         if (YCanBePressed)
         {
+            OnNoteHitted?.Invoke();
+
             Debug.Log("Hit");
             YCanBePressed = false;
             Destroy(currentObject);

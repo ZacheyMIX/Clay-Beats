@@ -19,9 +19,16 @@ public class Score : MonoBehaviour
         }
     }
 
-    private bool isPlaying = false;
+    public bool isPlaying { get; private set; } = false;
     private int maxScore;
     private int currentScore;
+
+
+    private void Start()
+    {
+        PlayerCursor pc = GameObject.Find("P1Cursor").GetComponent<PlayerCursor>();
+        pc.OnNoteHitted.AddListener(NoteHitted);
+    }
 
     /// <summary>
     /// initialize the score count.  A song's score will between 0% and 100%.
