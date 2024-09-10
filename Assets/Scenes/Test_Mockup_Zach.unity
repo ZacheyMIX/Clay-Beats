@@ -1275,7 +1275,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: -65}
+  m_AnchoredPosition: {x: 33, y: -65}
   m_SizeDelta: {x: 67, y: 67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!54 &461267246
@@ -2007,7 +2007,6 @@ GameObject:
   - component: {fileID: 843958368}
   - component: {fileID: 843958367}
   - component: {fileID: 843958366}
-  - component: {fileID: 843958365}
   - component: {fileID: 843958364}
   - component: {fileID: 843958363}
   - component: {fileID: 843958362}
@@ -2092,10 +2091,6 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: be0c8209-d732-4cee-a036-8becf9bada67
-    m_ActionName: Gameplay/Action[/XInputControllerWindows/buttonSouth]
-  - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
@@ -2111,24 +2106,27 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ec6c5852-f8fe-4fe9-a894-b054042fbe20
     m_ActionName: Gameplay/Move[/XInputControllerWindows/leftStick,/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 704de468-77b3-46dc-97d7-fd0cc9ed402a
+    m_ActionName: Gameplay/AButton[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2eee710a-cdd6-44dc-af71-d1450a56759a
+    m_ActionName: Gameplay/BButton[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4b6f2c4f-765e-400c-bc27-28ae23359d79
+    m_ActionName: Gameplay/XButton[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5720b15c-8a7d-4e9f-a86e-2ec73412d401
+    m_ActionName: Gameplay/YButton[/XInputControllerWindows/buttonNorth]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &843958365
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 843958360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d15576bb6e8041945b247dff6c3d2cd3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePressed: 0
 --- !u!114 &843958366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2519,7 +2517,7 @@ GameObject:
   - component: {fileID: 1571531343}
   - component: {fileID: 1571531342}
   m_Layer: 5
-  m_Name: GreenNote
+  m_Name: RedNote
   m_TagString: BButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2573,7 +2571,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01251936, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2711,7 +2709,7 @@ GameObject:
   - component: {fileID: 1690098339}
   - component: {fileID: 1690098338}
   m_Layer: 5
-  m_Name: GreenNote
+  m_Name: BlueNote
   m_TagString: XButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2765,7 +2763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01251936, g: 1, b: 0, a: 1}
+  m_Color: {r: 0, g: 0.19761395, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
