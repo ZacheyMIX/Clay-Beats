@@ -101,6 +101,9 @@ public class JsonMapper : MonoBehaviour
             _notePlayer._notesToSpawn.Add(_noteName);
         }
 
-        _notePlayer._hasStarted = true;
+        //float _duration = _songData.song[0].duration;
+
+        _notePlayer._started = true;
+       // _notePlayer._songDuration = _duration;
     }
 }
