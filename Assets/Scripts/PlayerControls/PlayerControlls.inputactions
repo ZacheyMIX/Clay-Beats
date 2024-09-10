@@ -6,34 +6,47 @@
             "id": "8a0202ac-6a10-43d1-aaaf-905b7a841ca0",
             "actions": [
                 {
-                    "name": "Action",
-                    "type": "Button",
-                    "id": "be0c8209-d732-4cee-a036-8becf9bada67",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "Move",
                     "type": "Button",
                     "id": "ec6c5852-f8fe-4fe9-a894-b054042fbe20",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "AButton",
+                    "type": "Button",
+                    "id": "704de468-77b3-46dc-97d7-fd0cc9ed402a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "BButton",
+                    "type": "Button",
+                    "id": "2eee710a-cdd6-44dc-af71-d1450a56759a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "XButton",
+                    "type": "Button",
+                    "id": "4b6f2c4f-765e-400c-bc27-28ae23359d79",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "YButton",
+                    "type": "Button",
+                    "id": "5720b15c-8a7d-4e9f-a86e-2ec73412d401",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "77a999b2-2a59-4513-872a-4b1b7949031e",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Action",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "",
                     "id": "30bf2a8e-43bc-4bae-b3fc-25ee2e1ef19a",
@@ -99,6 +112,50 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "1fcd7d13-abcc-46f7-bbbd-b162dccfb3a8",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e0de0e98-6fd3-4dbe-814a-e0cf540a616e",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5975abeb-4c78-4d8a-8677-0c4715c58ec2",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "XButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5dbaed8c-9bdd-4abf-886a-44036e044979",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "YButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -116,6 +173,17 @@
                 {
                     "devicePath": "<Keyboard>",
                     "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "New control scheme1",
+            "bindingGroup": "New control scheme1",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
                     "isOR": false
                 }
             ]

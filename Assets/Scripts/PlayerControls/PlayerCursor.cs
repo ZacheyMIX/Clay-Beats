@@ -9,16 +9,13 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField]
     RectTransform cursor;
     [SerializeField]
-    float cursorSpeed = 1000f;
-    [SerializeField]
-    float maxWidth;
-    [SerializeField]
-    float minWidth;
-    [SerializeField]
-    float defaultPos;
+    bool hold;
 
-
-    Vector2 move;
+    bool ACanBePressed;
+    bool BCanBePressed;
+    bool XCanBePressed;
+    bool YCanBePressed;
+    GameObject currentObject;
 
 
     private void Awake()
@@ -26,21 +23,82 @@ public class PlayerCursor : MonoBehaviour
         controls = new PlayerControlls();
 
         //Controlls need context in order to perform calls through lambda values
-        controls.Gameplay.Action.performed += ctx => Action();
+        controls.Gameplay.AButton.performed += ctx => actionA();
+        controls.Gameplay.BButton.performed += ctx => actionB();
+        controls.Gameplay.XButton.performed += ctx => actionX();
+        controls.Gameplay.YButton.performed += ctx => actionY();
+
     }
 
     //Handles Note Interaction
-    private void Action()
+    private void actionA()
     {
-        if(gameObject.GetComponent<CollisionManager>().canBePressed) 
+        if(ACanBePressed) 
         {
             Debug.Log("Hit");
+            ACanBePressed = false;
+            Destroy(currentObject);
+        }
+    }
+    private void actionB()
+    {
+        if (BCanBePressed)
+        {
+            Debug.Log("Hit");
+            BCanBePressed = false;
+            Destroy(currentObject);
+        }
+    }
+    private void actionX()
+    {
+        if (XCanBePressed)
+        {
+            Debug.Log("Hit");
+            XCanBePressed = false;
+            Destroy(currentObject);
+        }
+    }
+    private void actionY()
+    {
+        if (YCanBePressed)
+        {
+            Debug.Log("Hit");
+            YCanBePressed = false;
+            Destroy(currentObject);
         }
     }
 
-    
+
+
+
     private void Update()
     {
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        currentObject = other.gameObject;
+        if (other.gameObject.tag == "AButton")
+            ACanBePressed = true;
+        else if(other.gameObject.tag == "BButton")
+            BCanBePressed = true;
+        else if (other.gameObject.tag == "XButton")
+            XCanBePressed = true;
+        else if (other.gameObject.tag == "YButton")
+            YCanBePressed = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+         
+        if (other.gameObject.tag == "AButton")
+            ACanBePressed = false;
+        else if (other.gameObject.tag == "BButton")
+            BCanBePressed = false;
+        else if (other.gameObject.tag == "XButton")
+            XCanBePressed = false;
+        else if (other.gameObject.tag == "YButton")
+            YCanBePressed = false;
     }
 
     private void OnEnable()
