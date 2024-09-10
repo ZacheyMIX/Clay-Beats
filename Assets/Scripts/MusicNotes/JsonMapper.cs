@@ -9,6 +9,7 @@ public class JsonMapper : MonoBehaviour
 
     [SerializeField] private string[] _spawnColors;
     [SerializeField] private float[] _spawnTimes;
+    private NotePlayer _notePlayer;
 
 
     [System.Serializable]
@@ -41,7 +42,6 @@ public class JsonMapper : MonoBehaviour
     public class NoteList
     {
         public Note[] notes; 
-    
     }
 
     public NoteList _noteList = new NoteList();
@@ -49,13 +49,58 @@ public class JsonMapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       // _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
         _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
+        _notePlayer = GetComponent<NotePlayer>();
+
+        FillNotePlayer();
     }
 
-    // Update is called once per frame
-    void Update()
+   private void FillNotePlayer()
     {
-        
+        List<GameObject> _notesToSpawn = new List<GameObject>();
+        List<float> _timesToSpawn = new List<float>();
+
+        //int i = 0;
+
+        foreach (Note _note in _noteList.notes)
+        {
+            string _noteName = _note.name;
+            float _noteTime = _note.time;
+
+            _notePlayer._timesToSpawn.Add(_noteTime);
+
+            if(_noteName == "C4")
+            {
+                _noteName = "A";
+            }
+            else if(_noteName == "D4")
+            {
+                _noteName = "B";
+            }
+            else if(_noteName == "E4")
+            {
+                _noteName = "X";
+            }
+            else if(_noteName == "F4")
+            {
+                _noteName = "Y";
+            }
+            else if(_noteName == "C5")
+            {
+                _noteName = "left";
+            }
+            else if(_noteName == "D5")
+            {
+                _noteName = "middle";
+            }
+            else if(_noteName == "E5")
+            {
+                _noteName = "right";
+            }
+
+            _notePlayer._notesToSpawn.Add(_noteName);
+        }
+
+        _notePlayer._hasStarted = true;
     }
 }

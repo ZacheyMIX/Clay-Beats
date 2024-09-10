@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 508308776968208483}
   m_Layer: 5
   m_Name: RedNote
-  m_TagString: Untagged
+  m_TagString: XButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _falling: 1
   _fallSpeed: 0.1
-  _noteType: 0
 --- !u!65 &508308776968208481
 BoxCollider:
   m_ObjectHideFlags: 0

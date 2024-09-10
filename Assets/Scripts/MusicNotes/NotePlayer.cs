@@ -8,11 +8,12 @@ public class NotePlayer : MonoBehaviour
 {
     private NoteManager _noteManager;
 
-    [SerializeField] private List<float> _spawnTimes = new List<float>();
-    [SerializeField] private List<string> _spawnColors = new List<string>();
+    public List<float> _timesToSpawn = new List<float>();
+    public List<string> _notesToSpawn = new List<string>();
     [SerializeField] private float _currentSongTime;
 
     public float _noteSpeed;
+    public bool _hasStarted = false;
     
     
     
@@ -20,31 +21,33 @@ public class NotePlayer : MonoBehaviour
     void Start()
     {
         _noteManager = GetComponent<NoteManager>();
-
+       
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(_spawnTimes.Count > 0)
+        if (_hasStarted)
         {
-            float _difference = Mathf.Abs(_currentSongTime - _spawnTimes[0]);
-            
-            if(_difference <= 0.01f)
+            if(_timesToSpawn.Count > 0)
             {
-                string _color = _spawnColors[0];
-                _noteManager.SpawnNote(_color, _noteSpeed);
-                _spawnTimes.RemoveAt(0);
-                _spawnColors.RemoveAt(0);
+                float _difference = Mathf.Abs(_currentSongTime - _timesToSpawn[0]);
+            
+                if(_difference <= 0.01f)
+                {
+                    string _noteType = _notesToSpawn[0];
+                    _noteManager.SpawnNote(_noteType, _noteSpeed);
+                    _timesToSpawn.RemoveAt(0);
+                    _notesToSpawn.RemoveAt(0);
+                }
+
             }
+        
+
+            _currentSongTime += Time.deltaTime;
 
         }
-        
-
-        _currentSongTime += Time.deltaTime;
     }
-
 
 }

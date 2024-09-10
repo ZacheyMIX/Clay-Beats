@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3745481490688548634}
   m_Layer: 5
   m_Name: BlueNote
-  m_TagString: Untagged
+  m_TagString: BButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _falling: 1
   _fallSpeed: 0.2
-  _noteType: 0
 --- !u!65 &3745481490688548632
 BoxCollider:
   m_ObjectHideFlags: 0

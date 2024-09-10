@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1821120521082798149}
   m_Layer: 5
   m_Name: GreenNote
-  m_TagString: Untagged
+  m_TagString: AButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _falling: 1
   _fallSpeed: 0.3
-  _noteType: 0
 --- !u!65 &1821120521082798151
 BoxCollider:
   m_ObjectHideFlags: 0

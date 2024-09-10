@@ -2870,10 +2870,10 @@ MonoBehaviour:
   - {fileID: 508308776968208509, guid: 7cc0fb972707979408f647effc50f816, type: 3}
   - {fileID: 2350434763271287287, guid: c707c36bc1c310e438224f6a3ab81c1d, type: 3}
   _stringsPool:
-  - green
-  - blue
-  - red
-  - yellow
+  - A
+  - B
+  - X
+  - Y
   _spawnerObjects:
   - {fileID: 613400080}
   - {fileID: 7697692675657964844}
@@ -2891,18 +2891,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd3f6464e8518e41a7e4130ac0cc305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnTimes:
-  - 3.1
-  - 5.05
-  - 7.9
-  - 7.9
-  _spawnColors:
-  - red
-  - green
-  - blue
-  - yellow
+  _timesToSpawn: []
+  _notesToSpawn: []
   _currentSongTime: 0
   _noteSpeed: 0.2
+  _hasStarted: 0
 --- !u!114 &1553009213
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2350434763271287273}
   m_Layer: 5
   m_Name: YellowNote
-  m_TagString: Untagged
+  m_TagString: YButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,7 +61,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _falling: 1
   _fallSpeed: 0.15
-  _noteType: 0
 --- !u!65 &2350434763271287275
 BoxCollider:
   m_ObjectHideFlags: 0
