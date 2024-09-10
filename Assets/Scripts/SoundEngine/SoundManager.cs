@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Plays the sound, if there are mulitple sounds for the sound type
