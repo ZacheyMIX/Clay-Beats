@@ -20,8 +20,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        // animator for dialogue box
         animator.SetBool("IsOpen", true);
 
+        // npc name
         nameText.text = dialogue.name;
 
         sentences.Clear();
@@ -44,8 +46,6 @@ public class DialogueManager : MonoBehaviour
 
         string sentence = sentences.Dequeue();
 
-
-        //dialogueText.text = sentence;
         // Letters of the dialogue show up one by one
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -58,7 +58,8 @@ public class DialogueManager : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(textSpeed);
+            // wait textSpeed (seconds) before displaying next letter
+            yield return new WaitForSeconds(textSpeed); 
         }
     }
 
