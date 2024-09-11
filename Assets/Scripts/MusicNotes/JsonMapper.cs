@@ -38,26 +38,16 @@ public class JsonMapper : MonoBehaviour
 
 
     [System.Serializable]
-    public class NoteList
-    {
-        //public Note notes;
-
-        public string name;
-        public float midi;
-        public float time;
-        public float velocity;
-        public float duration;
-    }
-
-    [System.Serializable]
     public class Note
     {
+
         public string name;
         public float midi;
         public float time;
         public float velocity;
         public float duration;
     }
+
 
     [System.Serializable]
     public class TrackList
@@ -68,7 +58,7 @@ public class JsonMapper : MonoBehaviour
     [System.Serializable]
     public class Track
     {
-        public NoteList[] notes;
+        public Note[] notes;
         public float length;
     }
 
@@ -79,14 +69,12 @@ public class JsonMapper : MonoBehaviour
     void Start()
     {
 
-        // _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
-        // _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
         _trackList = JsonUtility.FromJson<TrackList>(_textJson.text);
         _headerList = JsonUtility.FromJson<HeaderList>(_textJson.text);
         duration = JsonUtility.FromJson<SongLength>(_textJson.text);
         _notePlayer = GetComponent<NotePlayer>();
 
-        //   FillNotePlayer();
+        FillNotePlayer();
     }
 
     private void FillNotePlayer()
@@ -94,12 +82,12 @@ public class JsonMapper : MonoBehaviour
         List<GameObject> _notesToSpawn = new List<GameObject>();
         List<float> _timesToSpawn = new List<float>();
 
-        //int i = 0;
+        int i = 0;
 
-        /*  foreach (Note _note in _noteList.notes)
+          foreach (Note note in _trackList.tracks[0].notes)
           {
-              string _noteName = _note.name;
-              float _noteTime = _note.time;
+              string _noteName = note.name;
+              float _noteTime = note.time;
 
               _notePlayer._timesToSpawn.Add(_noteTime);
 
@@ -137,7 +125,7 @@ public class JsonMapper : MonoBehaviour
 
           //float _duration = _songData.song[0].duration;
          // _notePlayer._songDuration = _duration;
-      }
-        */
     }
+        
+    
 }
