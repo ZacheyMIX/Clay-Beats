@@ -11,19 +11,27 @@ public class JsonMapper : MonoBehaviour
     [SerializeField] private float[] _spawnTimes;
     private NotePlayer _notePlayer;
 
+    [System.Serializable]
+    public class SongLength
+    {
+        public float duration;
+    }
+
+    public SongLength duration;
 
     [System.Serializable]
     public class Song
     {
-        public string title;
-        public int duration;
+        public int PPQ;
         public int bpm;
+        public string name;
+        
     }
 
     [System.Serializable]
     public class SongWhole
     {
-        public Song[] song;
+        public Song[] header;
     }
 
     public SongWhole _songData = new SongWhole();
@@ -49,7 +57,10 @@ public class JsonMapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
+        _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
         _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
+        duration = JsonUtility.FromJson<SongLength>(_textJson.text);
         _notePlayer = GetComponent<NotePlayer>();
 
         FillNotePlayer();
@@ -102,8 +113,6 @@ public class JsonMapper : MonoBehaviour
         }
 
         //float _duration = _songData.song[0].duration;
-
-        _notePlayer._started = true;
        // _notePlayer._songDuration = _duration;
     }
 }

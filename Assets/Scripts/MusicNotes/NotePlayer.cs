@@ -34,6 +34,8 @@ public class NotePlayer : MonoBehaviour
                 SongUpdate();
             }
         }
+
+        _started = true;
     }
 
     private void SongUpdate()

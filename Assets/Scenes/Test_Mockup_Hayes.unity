@@ -2915,7 +2915,7 @@ MonoBehaviour:
   _noteSpeed: 0.2
   _started: 0
   _ended: 0
-  _songDuration: 0
+  _songDuration: 30
 --- !u!114 &1553009213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2928,9 +2928,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b815b86649d84097e0722808b8aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textJson: {fileID: 4900000, guid: 0b7f2cf50217add498fdf48e62458372, type: 3}
+  _textJson: {fileID: 4900000, guid: 1c2ec8291a0d9a14fb0ae1587241e095, type: 3}
   _spawnColors: []
   _spawnTimes: []
+  duration:
+    duration: 0
   _songData:
     song: []
   _noteList:
@@ -3039,6 +3041,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1706993617}
+  - component: {fileID: 1706993618}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3062,6 +3065,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1706993618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706993616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd70c6497e8665d4ebf28d994927e88f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1718815563
 GameObject:
   m_ObjectHideFlags: 0
