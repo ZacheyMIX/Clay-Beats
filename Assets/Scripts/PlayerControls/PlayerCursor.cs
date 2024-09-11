@@ -35,6 +35,7 @@ public class PlayerCursor : MonoBehaviour
     }
 
     //Handles Note Interaction
+    //TODO check player index for score and sound effect for both players
     private void actionA()
     {
         if(ACanBePressed) 
@@ -43,6 +44,7 @@ public class PlayerCursor : MonoBehaviour
 
             Debug.Log("Hit");
             ACanBePressed = false;
+            playSoundEffect(1);
             Destroy(currentObject);
         }
     }
@@ -54,6 +56,7 @@ public class PlayerCursor : MonoBehaviour
 
             Debug.Log("Hit");
             BCanBePressed = false;
+            playSoundEffect(1);
             Destroy(currentObject);
         }
     }
@@ -65,6 +68,7 @@ public class PlayerCursor : MonoBehaviour
 
             Debug.Log("Hit");
             XCanBePressed = false;
+            playSoundEffect(1);
             Destroy(currentObject);
         }
     }
@@ -76,6 +80,7 @@ public class PlayerCursor : MonoBehaviour
 
             Debug.Log("Hit");
             YCanBePressed = false;
+            playSoundEffect(1);
             Destroy(currentObject);
         }
     }
@@ -87,54 +92,49 @@ public class PlayerCursor : MonoBehaviour
     {
     }
 
+    //When the note enters the space of the cursor, allowing the cursor to be able to interact with the note; hitting the note
     private void OnTriggerEnter(Collider other)
     {
         currentObject = other.gameObject;
         if (other.gameObject.tag == "AButton")
         { 
            ACanBePressed = true;
-            SoundManager.PlaySound(SoundType.MISS);
         }
         else if (other.gameObject.tag == "BButton")
         {
             BCanBePressed = true;
-            SoundManager.PlaySound(SoundType.MISS);
         }
         else if (other.gameObject.tag == "XButton")
         {
             XCanBePressed = true;
-            SoundManager.PlaySound(SoundType.MISS);
         }
         else if (other.gameObject.tag == "YButton")
         {
             YCanBePressed = true;
-            SoundManager.PlaySound(SoundType.MISS);
         }
     }
 
+    //When the note exits the space of the cursor after entering, disallowing any input from the player; missing the note
     private void OnTriggerExit(Collider other)
     {
 
         if (other.gameObject.tag == "AButton")
         {
             ACanBePressed = false;
-            SoundManager.PlaySound(SoundType.LPAW);
         }
         else if (other.gameObject.tag == "BButton")
         {
             BCanBePressed = false;
-            SoundManager.PlaySound(SoundType.LPAW);
         }
         else if (other.gameObject.tag == "XButton")
         {
             XCanBePressed = false;
-            SoundManager.PlaySound(SoundType.LPAW);
         }
         else if (other.gameObject.tag == "YButton")
         {
             YCanBePressed = false;
-            SoundManager.PlaySound(SoundType.LPAW);
         }
+        playSoundEffect(0);
     }
 
     private void OnEnable()
@@ -145,5 +145,20 @@ public class PlayerCursor : MonoBehaviour
     private void OnDisable()
     {
         controls.Gameplay.Disable();
+    }
+
+    //Plays sound effect based on given condition
+    private void playSoundEffect(int condition)
+    {
+        switch (condition)
+        {
+            case 0:
+                //SoundManager.PlaySound(SoundType.MISS);
+                break;
+            case 1: 
+                //SoundManager.PlaySound(SoundType.LPAW);
+                break;
+
+        }
     }
 }
