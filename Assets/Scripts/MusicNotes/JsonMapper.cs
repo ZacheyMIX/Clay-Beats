@@ -20,21 +20,34 @@ public class JsonMapper : MonoBehaviour
     public SongLength duration;
 
     [System.Serializable]
-    public class Song
+    public class Header
     {
         public int PPQ;
         public int bpm;
         public string name;
-        
+
     }
 
     [System.Serializable]
-    public class SongWhole
+    public class HeaderList
     {
-        public Song[] header;
+        public Header header;
     }
 
-    public SongWhole _songData = new SongWhole();
+    public HeaderList _headerList = new HeaderList();
+
+
+    [System.Serializable]
+    public class NoteList
+    {
+        //public Note notes;
+
+        public string name;
+        public float midi;
+        public float time;
+        public float velocity;
+        public float duration;
+    }
 
     [System.Serializable]
     public class Note
@@ -47,72 +60,84 @@ public class JsonMapper : MonoBehaviour
     }
 
     [System.Serializable]
-    public class NoteList
+    public class TrackList
     {
-        public Note[] notes; 
+        public Track[] tracks;
     }
 
-    public NoteList _noteList = new NoteList();
+    [System.Serializable]
+    public class Track
+    {
+        public NoteList[] notes;
+        public float length;
+    }
+
+    public TrackList _trackList = new TrackList();
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
-        _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
+
+        // _songData = JsonUtility.FromJson<SongWhole>(_textJson.text);
+        // _noteList = JsonUtility.FromJson<NoteList>(_textJson.text);
+        _trackList = JsonUtility.FromJson<TrackList>(_textJson.text);
+        _headerList = JsonUtility.FromJson<HeaderList>(_textJson.text);
         duration = JsonUtility.FromJson<SongLength>(_textJson.text);
         _notePlayer = GetComponent<NotePlayer>();
 
-        FillNotePlayer();
+        //   FillNotePlayer();
     }
 
-   private void FillNotePlayer()
+    private void FillNotePlayer()
     {
         List<GameObject> _notesToSpawn = new List<GameObject>();
         List<float> _timesToSpawn = new List<float>();
 
         //int i = 0;
 
-        foreach (Note _note in _noteList.notes)
-        {
-            string _noteName = _note.name;
-            float _noteTime = _note.time;
+        /*  foreach (Note _note in _noteList.notes)
+          {
+              string _noteName = _note.name;
+              float _noteTime = _note.time;
 
-            _notePlayer._timesToSpawn.Add(_noteTime);
+              _notePlayer._timesToSpawn.Add(_noteTime);
 
-            if(_noteName == "C4")
-            {
-                _noteName = "A";
-            }
-            else if(_noteName == "D4")
-            {
-                _noteName = "B";
-            }
-            else if(_noteName == "E4")
-            {
-                _noteName = "X";
-            }
-            else if(_noteName == "F4")
-            {
-                _noteName = "Y";
-            }
-            else if(_noteName == "C5")
-            {
-                _noteName = "left";
-            }
-            else if(_noteName == "D5")
-            {
-                _noteName = "middle";
-            }
-            else if(_noteName == "E5")
-            {
-                _noteName = "right";
-            }
+              if(_noteName == "C4")
+              {
+                  _noteName = "A";
+              }
+              else if(_noteName == "D4")
+              {
+                  _noteName = "B";
+              }
+              else if(_noteName == "E4")
+              {
+                  _noteName = "X";
+              }
+              else if(_noteName == "F4")
+              {
+                  _noteName = "Y";
+              }
+              else if(_noteName == "C5")
+              {
+                  _noteName = "left";
+              }
+              else if(_noteName == "D5")
+              {
+                  _noteName = "middle";
+              }
+              else if(_noteName == "E5")
+              {
+                  _noteName = "right";
+              }
 
-            _notePlayer._notesToSpawn.Add(_noteName);
-        }
+              _notePlayer._notesToSpawn.Add(_noteName);
+          }
 
-        //float _duration = _songData.song[0].duration;
-       // _notePlayer._songDuration = _duration;
+          //float _duration = _songData.song[0].duration;
+         // _notePlayer._songDuration = _duration;
+      }
+        */
     }
 }

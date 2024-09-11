@@ -6,7 +6,7 @@
       4
     ],
     "bpm": 100,
-    "name": ""
+    "name": "testTrackName"
   },
   "tempo": [
     {
@@ -28,22 +28,6 @@
   "startTime": 0,
   "duration": 37.50000000000002,
   "tracks": [
-    {
-      "startTime": 0,
-      "duration": 0,
-      "length": 0,
-      "notes": [],
-      "controlChanges": {},
-      "id": 0
-    },
-    {
-      "startTime": 0,
-      "duration": 0,
-      "length": 0,
-      "notes": [],
-      "controlChanges": {},
-      "id": 1
-    },
     {
       "startTime": 0,
       "duration": 37.50000000000002,
