@@ -11,6 +11,8 @@ public class PlayerCursor : MonoBehaviour
     RectTransform cursor;
     [SerializeField]
     bool hold;
+    [SerializeField]
+    int playerIndex;
 
     bool ACanBePressed;
     bool BCanBePressed;
@@ -35,7 +37,7 @@ public class PlayerCursor : MonoBehaviour
     }
 
     //Handles Note Interaction
-    //TODO check player index for score and sound effect for both players
+    //TODO check player index for score and handling of long notes
     private void actionA()
     {
         if(ACanBePressed) 
@@ -148,6 +150,7 @@ public class PlayerCursor : MonoBehaviour
     }
 
     //Plays sound effect based on given condition
+    //TODO remove debugs when sound effects are implemented
     private void playSoundEffect(int condition)
     {
         switch (condition)
@@ -155,8 +158,13 @@ public class PlayerCursor : MonoBehaviour
             case 0:
                 //SoundManager.PlaySound(SoundType.MISS);
                 break;
-            case 1: 
+            case 1:
+                if (playerIndex == 0)
+                    Debug.Log("P1 Hit");
                 //SoundManager.PlaySound(SoundType.LPAW);
+                else
+                    Debug.Log("P2 Hit");
+                    //SoundManager.PlaySound(SoundType.RPAW);
                 break;
 
         }
