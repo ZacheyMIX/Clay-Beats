@@ -9,7 +9,9 @@ public class JsonMapper : MonoBehaviour
 
     [SerializeField] private string[] _spawnColors;
     [SerializeField] private float[] _spawnTimes;
-    private NotePlayer _notePlayer;
+    [SerializeField] private NotePlayer _notePlayerLeft;
+    [SerializeField] private NotePlayer _notePlayerRight;
+
 
     [System.Serializable]
     public class SongLength
@@ -72,7 +74,7 @@ public class JsonMapper : MonoBehaviour
         _trackList = JsonUtility.FromJson<TrackList>(_textJson.text);
         _headerList = JsonUtility.FromJson<HeaderList>(_textJson.text);
         duration = JsonUtility.FromJson<SongLength>(_textJson.text);
-        _notePlayer = GetComponent<NotePlayer>();
+        
 
         FillNotePlayer();
     }
@@ -89,9 +91,10 @@ public class JsonMapper : MonoBehaviour
               string _noteName = note.name;
               float _noteTime = note.time;
 
-              _notePlayer._timesToSpawn.Add(_noteTime);
+              _notePlayerLeft._timesToSpawn.Add(_noteTime);
+              _notePlayerRight._timesToSpawn.Add(_noteTime);
 
-              if(_noteName == "C4")
+            if (_noteName == "C4")
               {
                   _noteName = "A";
               }
@@ -124,10 +127,14 @@ public class JsonMapper : MonoBehaviour
                 _noteName = "Y";
             }
 
-              _notePlayer._notesToSpawn.Add(_noteName);
+              _notePlayerLeft._notesToSpawn.Add(_noteName);
+              _notePlayerRight._notesToSpawn.Add(_noteName);
           }
 
-           _notePlayer._songDuration = duration.duration;
+           _notePlayerLeft._songDuration = duration.duration;
+            _notePlayerRight._songDuration = duration.duration;
+
+
     }
         
     

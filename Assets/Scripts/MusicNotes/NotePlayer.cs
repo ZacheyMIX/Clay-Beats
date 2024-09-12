@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class NotePlayer : MonoBehaviour
 {
-    private NoteManager _noteManager;
+    [SerializeField] private NoteManager _noteManagerLeft;
+    [SerializeField] private NoteManager _noteManagerRight;
 
     public List<float> _timesToSpawn = new List<float>();
     public List<string> _notesToSpawn = new List<string>();
@@ -17,12 +18,7 @@ public class NotePlayer : MonoBehaviour
     public bool _ended = false;
     public float _songDuration;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-        _noteManager = GetComponent<NoteManager>();
-       
-    }
+
 
     public void PlayFirstNote()
     {
@@ -50,8 +46,9 @@ public class NotePlayer : MonoBehaviour
                 if(_difference <= 0.01f)
                 {
                     string _noteType = _notesToSpawn[0];
-                    _noteManager.SpawnNote(_noteType, _noteSpeed);
-                    _timesToSpawn.RemoveAt(0);
+                    _noteManagerLeft.SpawnNote(_noteType, _noteSpeed);
+                    _noteManagerRight.SpawnNote(_noteType, _noteSpeed);
+                _timesToSpawn.RemoveAt(0);
                     _notesToSpawn.RemoveAt(0);
                 }
 

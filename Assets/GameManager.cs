@@ -5,34 +5,24 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
-    public NotePlayer _player;
+    [SerializeField] private NotePlayer _playerLeft;
+    [SerializeField] private NotePlayer _playerRight;
     private bool _playedFirstNote = false;
     private bool _startedSong = false;
+
+    [SerializeField] private AudioSource _currentSong;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-
-            if (!_playedFirstNote)
-            {
-                _playedFirstNote = true;
-                StartCoroutine(PlayFirstNote());
-            }
-        }
+        StartCoroutine(PlayFirstNote());
     }
 
     private IEnumerator PlayFirstNote()
     {
         yield return new WaitForSeconds(1);
-        _player.PlayFirstNote();
+        _playerLeft.PlayFirstNote();
+        _playerRight.PlayFirstNote();
     }
 
     public void StartSong()
@@ -40,7 +30,8 @@ public class GameManager : MonoBehaviour
         if (!_startedSong)
         {
             _startedSong = true;
-        Debug.Log("started Song!");  
+            Debug.Log("started Song!");
+            _currentSong.Play();
         }
         
     }
