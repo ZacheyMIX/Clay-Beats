@@ -2446,13 +2446,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1236513815}
     m_Modifications:
+    - target: {fileID: 5757739085964170039, guid: 4cde08172c82d9c4cb40c2f787371309, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757739085964170039, guid: 4cde08172c82d9c4cb40c2f787371309, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4dfd7eb09f3cd75478fcaaf3f8a8c6b3, type: 2}
     - target: {fileID: 6117969950111527650, guid: 4cde08172c82d9c4cb40c2f787371309, type: 3}
       propertyPath: m_Name
       value: Wheel
       objectReference: {fileID: 0}
     - target: {fileID: 6117969950111527650, guid: 4cde08172c82d9c4cb40c2f787371309, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6894085162537658456, guid: 4cde08172c82d9c4cb40c2f787371309, type: 3}
       propertyPath: m_RootOrder
@@ -2764,7 +2772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a7ac285c6ecd2d0488978b628c258d59, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7ac285c6ecd2d0488978b628c258d59, type: 3}
