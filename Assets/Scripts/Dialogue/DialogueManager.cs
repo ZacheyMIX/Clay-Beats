@@ -9,13 +9,16 @@ public class DialogueManager : MonoBehaviour
     public Text dialogueText;
     public Animator animator;
     public float textSpeed;
-
+    public Queue<float> pauseTimes;
     private Queue<string> sentences;
+    private Queue<int> fontSizes;
 
     // Start is called before the first frame update
     void Start()
     {
         sentences = new Queue<string>();
+        pauseTimes = new Queue<float>();
+        fontSizes = new Queue<int>();
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -25,12 +28,31 @@ public class DialogueManager : MonoBehaviour
 
         // npc name
         nameText.text = dialogue.name;
+        textSpeed = dialogue.textSpeed;
 
         sentences.Clear();
+        pauseTimes.Clear();
+        fontSizes.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        for (int i = 0; i < dialogue.sentences.Length; i++)
         {
-            sentences.Enqueue(sentence);
+            sentences.Enqueue(dialogue.sentences[i]);
+            if (i < dialogue.pauseTimes.Length)
+            {
+                pauseTimes.Enqueue(dialogue.pauseTimes[i]);
+            }
+            else
+            {
+                pauseTimes.Enqueue(1f);
+            }
+            if (i < dialogue.fontSizes.Length)
+            {
+                fontSizes.Enqueue(dialogue.fontSizes[i]);
+            }
+            else
+            {
+                fontSizes.Enqueue(dialogueText.fontSize);
+            }
         }
 
         DisplayNextSentence();
@@ -45,14 +67,18 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();
+        float pauseTime = pauseTimes.Dequeue();
+        int fontSize = fontSizes.Dequeue();
+
+        dialogueText.fontSize = fontSize;
 
         // Letters of the dialogue show up one by one
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence, pauseTime));
     }
 
     // Letters of the dialogue show up one by one
-    IEnumerator TypeSentence (string sentence)
+    IEnumerator TypeSentence (string sentence, float pauseTime)
     {
         dialogueText.text = "";
         foreach(char letter in sentence.ToCharArray())
@@ -61,11 +87,12 @@ public class DialogueManager : MonoBehaviour
             // wait textSpeed (seconds) before displaying next letter
             yield return new WaitForSeconds(textSpeed); 
         }
+        yield return new WaitForSeconds(pauseTime);
+        DisplayNextSentence();
     }
 
     void EndDialogue ()
     {
-        Debug.Log("End of conversation.");
         animator.SetBool("IsOpen", false);
     }
 }
