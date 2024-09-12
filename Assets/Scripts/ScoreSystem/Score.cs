@@ -13,7 +13,7 @@ public class Score
         get
         {
             if (isPlaying)
-                return $"{(int)(((float)currentScore / maxScore) * 100)}%";
+                return $"{(int)(ScoreProgress() * 100)}%";
             else
                 return "currently not playing a song";
         }
@@ -23,11 +23,11 @@ public class Score
     private int maxScore;
     private int currentScore;
 
-    Animation an;
 
-    public Score(Animation textAnimation)
+    public Score()
     {
-        an = textAnimation;
+        maxScore = 0;
+        currentScore = 0;
     }
 
     /// <summary>
@@ -45,12 +45,16 @@ public class Score
     public void NoteHitted() 
     {
         currentScore++;
-        an?.Play();
     }
 
     public void EndSong() 
     {
         isPlaying = false;
+    }
+
+    public float ScoreProgress() 
+    {
+        return  Mathf.Clamp( (float)currentScore / maxScore, 0, 1);
     }
 
 
