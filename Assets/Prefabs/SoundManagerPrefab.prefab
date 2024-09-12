@@ -140,4 +140,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a32eed4cfae591469c0e68209646233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundList: []
+  soundList:
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: 75930af45d45d4887a350b77c95afbf3, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: 4549fe1b3cc1a435b96416f68951646c, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: 8d441d1f2334846718d46a68260ee988, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: f150287bb9e8e4cbdbd288d550fff6ab, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: c69576769ffd244c29b4d5edc08f9d29, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: e45226c7055264decbbd1fae8e262490, type: 3}
+  - name: 
+    sounds:
+    - {fileID: 8300000, guid: ec0834000db18a442be5d97eb3e4e978, type: 3}

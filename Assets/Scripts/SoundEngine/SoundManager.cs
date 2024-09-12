@@ -11,7 +11,8 @@ public enum SoundType
     RPAW,
     UIPLAY,
     UICONFIRM,
-    UIBACK
+    UIBACK,
+    MUSIC
 }
 
 [RequireComponent(typeof(AudioSource)), ExecuteInEditMode]
