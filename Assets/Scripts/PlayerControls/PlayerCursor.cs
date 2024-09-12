@@ -44,10 +44,11 @@ public class PlayerCursor : MonoBehaviour
         {
             OnNoteHitted?.Invoke();
 
-            Debug.Log("Hit");
+            Debug.Log(currentObject);
             ACanBePressed = false;
-            playSoundEffect(1);
             Destroy(currentObject);
+            playSoundEffect(1);
+            
         }
     }
     private void actionB()
@@ -56,10 +57,10 @@ public class PlayerCursor : MonoBehaviour
         {
             OnNoteHitted?.Invoke();
 
-            Debug.Log("Hit");
+            Debug.Log(currentObject);
             BCanBePressed = false;
-            playSoundEffect(1);
             Destroy(currentObject);
+            playSoundEffect(1);
         }
     }
     private void actionX()
@@ -68,10 +69,10 @@ public class PlayerCursor : MonoBehaviour
         {
             OnNoteHitted?.Invoke();
 
-            Debug.Log("Hit");
+            Debug.Log(currentObject);
             XCanBePressed = false;
-            playSoundEffect(1);
             Destroy(currentObject);
+            playSoundEffect(1);
         }
     }
     private void actionY()
@@ -80,10 +81,10 @@ public class PlayerCursor : MonoBehaviour
         {
             OnNoteHitted?.Invoke();
 
-            Debug.Log("Hit");
+            Debug.Log(currentObject);
             YCanBePressed = false;
-            playSoundEffect(1);
             Destroy(currentObject);
+            playSoundEffect(1);
         }
     }
 
@@ -156,7 +157,7 @@ public class PlayerCursor : MonoBehaviour
         switch (condition)
         {
             case 0:
-                SoundManager.PlaySound(SoundType.MISS);
+                //SoundManager.PlaySound(SoundType.MISS);
                 break;
             case 1:
                 if (playerIndex == 0)
