@@ -24,6 +24,11 @@ public class NotePlayer : MonoBehaviour
        
     }
 
+    public void PlayFirstNote()
+    {
+        _started = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -34,8 +39,6 @@ public class NotePlayer : MonoBehaviour
                 SongUpdate();
             }
         }
-
-        _started = true;
     }
 
     private void SongUpdate()

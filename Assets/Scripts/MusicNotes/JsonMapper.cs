@@ -109,22 +109,25 @@ public class JsonMapper : MonoBehaviour
               }
               else if(_noteName == "C5")
               {
-                  _noteName = "left";
+                  _noteName = "A";
               }
               else if(_noteName == "D5")
               {
-                  _noteName = "middle";
+                  _noteName = "B";
               }
               else if(_noteName == "E5")
               {
-                  _noteName = "right";
+                  _noteName = "X";
               }
+            else
+            {
+                _noteName = "Y";
+            }
 
               _notePlayer._notesToSpawn.Add(_noteName);
           }
 
-          //float _duration = _songData.song[0].duration;
-         // _notePlayer._songDuration = _duration;
+           _notePlayer._songDuration = duration.duration;
     }
         
     
