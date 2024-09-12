@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -2.71}
-  m_SizeDelta: {x: 67, y: 50}
+  m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1821120521082798150
 CanvasRenderer:
@@ -70,7 +70,7 @@ BoxCollider:
   m_GameObject: {fileID: 1821120521082798171}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 67.91053, y: 51.63206, z: 1}
   m_Center: {x: -0.057586033, y: -0.5573106, z: 0}
@@ -87,14 +87,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.01251936, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e2078613efd9e410c8771cbd2717f4e7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 7070336795594ff4d927b26672679600, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
