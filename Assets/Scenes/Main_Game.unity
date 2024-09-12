@@ -255,7 +255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39453687}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be76e5f14cfee674cb30b491fb72b09b, type: 3}
   m_Name: 
@@ -953,15 +953,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6136279168704895832, guid: af1540008beb8734692d94e897f2ec67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2726605
+      value: -0.246
       objectReference: {fileID: 0}
     - target: {fileID: 6136279168704895832, guid: af1540008beb8734692d94e897f2ec67, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25343883
+      value: -0.334
       objectReference: {fileID: 0}
     - target: {fileID: 6136279168704895832, guid: af1540008beb8734692d94e897f2ec67, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.8356414
+      value: -0.83
       objectReference: {fileID: 0}
     - target: {fileID: 6136279168704895832, guid: af1540008beb8734692d94e897f2ec67, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5909,13 +5909,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: ClientModel_Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 2549815439819042667, guid: d33325b525b91f543ba510149eedf332, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 65
+      objectReference: {fileID: 0}
     - target: {fileID: 2893865188955010513, guid: d33325b525b91f543ba510149eedf332, type: 3}
       propertyPath: m_RootOrder
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2893865188955010513, guid: d33325b525b91f543ba510149eedf332, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.2299006
+      value: -2.96
       objectReference: {fileID: 0}
     - target: {fileID: 2893865188955010513, guid: d33325b525b91f543ba510149eedf332, type: 3}
       propertyPath: m_LocalPosition.y
