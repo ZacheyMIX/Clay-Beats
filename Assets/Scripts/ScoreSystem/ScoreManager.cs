@@ -46,18 +46,7 @@ public class ScoreManager : MonoBehaviour
         p1Text.text = p1Score.scoreDisplay;
         t1Animation = p1ScoreText.GetComponent<Animation>();
 
-        //update the score, update the text and invoke the animation
-        p1Cursor.OnNoteHitted.AddListener(p1Score.NoteHitted);
-        p1Cursor.OnNoteHitted.AddListener(()=> 
-        {
-            p1Text.text = p1Score.scoreDisplay;
-            t1Animation.Stop();
-            t1Animation.Play();
-            clayControl.Progress = p1Score.ScoreProgress();
-        });
-
         
-
         if (p2ScoreText != null && p2Cursor != null)
         {
             p2Score = new Score();
@@ -66,14 +55,25 @@ public class ScoreManager : MonoBehaviour
             t2Animation = p1ScoreText.GetComponent<Animation>();
 
             p2Cursor.OnNoteHitted.AddListener(p2Score.NoteHitted);
-            
+
             p1Cursor.OnNoteHitted.AddListener(() =>
             {
                 p2Text.text = p2Score.scoreDisplay;
                 t2Animation.Stop();
                 t2Animation.Play();
+                clayControl.Progress = CalculateTotalClayProgress();
             });
         }
+        
+        //update the score, update the text and invoke the animation
+        p1Cursor.OnNoteHitted.AddListener(p1Score.NoteHitted);
+        p1Cursor.OnNoteHitted.AddListener(() =>
+        {
+            p1Text.text = p1Score.scoreDisplay;
+            t1Animation.Stop();
+            t1Animation.Play();
+            clayControl.Progress = CalculateTotalClayProgress();
+        });
 
         //InitializePlayerScore(playerPos.PLAYER1, 100);
         //InvokeRepeating("TestHit", 0, 0.5f);
@@ -106,6 +106,16 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+
+    float CalculateTotalClayProgress() 
+    {
+        if (p2ScoreText != null && p2Cursor != null)
+        {
+            return (p1Score.ScoreProgress() + p2Score.ScoreProgress()) / 2;
+        }
+        else
+            return p1Score.ScoreProgress();
+    }
 
     private void TestHit()
     {

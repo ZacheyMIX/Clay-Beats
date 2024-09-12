@@ -13,7 +13,7 @@ public class Score
         get
         {
             if (isPlaying)
-                return $"{(int)(ScoreProgress() * 100)}%";
+                return $"{Math.Round(ScoreProgress() * 100)}%";
             else
                 return "currently not playing a song";
         }
