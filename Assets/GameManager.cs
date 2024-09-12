@@ -9,8 +9,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] private NotePlayer _playerRight;
     private bool _playedFirstNote = false;
     private bool _startedSong = false;
+    public float _startSongPosition;
 
     [SerializeField] private AudioSource _currentSong;
+
+    //The below region just creates a reference of this specific script that we can call from other scripts quickly
+    #region Singleton
+
+    public static GameManager instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of playercontroller present!! NOT GOOD!");
+            return;
+        }
+
+        instance = this;
+    }
+
+    #endregion
 
     // Start is called before the first frame update
     void Start()

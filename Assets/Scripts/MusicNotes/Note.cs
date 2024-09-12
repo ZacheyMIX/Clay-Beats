@@ -12,7 +12,7 @@ public class Note : MonoBehaviour
     private float _startPosY;
     private bool _hasFailed;
     private float _currentSpeed;
-  
+    private float _startSongPosition;
     
     
     public void SetFallSpeed(float _newSpeed)
@@ -22,6 +22,7 @@ public class Note : MonoBehaviour
     
     private void Start()
     {
+        _startSongPosition = GameManager.instance._startSongPosition;
         _startPosY = transform.position.y;
         _currentSpeed = 0;
     }
@@ -47,6 +48,11 @@ public class Note : MonoBehaviour
                 StartCoroutine(FailNote());
             }
         }
+        else if(transform.position.y <= _startSongPosition)
+        {
+            Debug.Log("StartedSong~");
+            GameManager.instance.StartSong();
+        }
      
     }
 
@@ -62,4 +68,6 @@ public class Note : MonoBehaviour
         Destroy(gameObject);
 
     }
+
+
 }
