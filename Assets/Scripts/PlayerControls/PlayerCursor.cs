@@ -156,15 +156,13 @@ public class PlayerCursor : MonoBehaviour
         switch (condition)
         {
             case 0:
-                //SoundManager.PlaySound(SoundType.MISS);
+                SoundManager.PlaySound(SoundType.MISS);
                 break;
             case 1:
                 if (playerIndex == 0)
-                    Debug.Log("P1 Hit");
-                //SoundManager.PlaySound(SoundType.LPAW);
+                    SoundManager.PlaySound(SoundType.LPAW);
                 else
-                    Debug.Log("P2 Hit");
-                    //SoundManager.PlaySound(SoundType.RPAW);
+                    SoundManager.PlaySound(SoundType.RPAW);
                 break;
 
         }

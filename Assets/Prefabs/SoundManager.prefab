@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -627950314075645468}
   - component: {fileID: -2789815117482271448}
   m_Layer: 0
-  m_Name: SoundManagerPrefab
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,4 +161,4 @@ MonoBehaviour:
     - {fileID: 8300000, guid: e45226c7055264decbbd1fae8e262490, type: 3}
   - name: 
     sounds:
-    - {fileID: 8300000, guid: ec0834000db18a442be5d97eb3e4e978, type: 3}
+    - {fileID: 8300000, guid: 7a2cb498cd926c34d80aaa40c5224b4e, type: 3}

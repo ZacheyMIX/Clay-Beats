@@ -2792,6 +2792,91 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &866012591
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[0].name
+      value: MISS
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[1].name
+      value: LPAW
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[2].name
+      value: RPAW
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[3].name
+      value: UIPLAY
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[4].name
+      value: UICONFIRM
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[5].name
+      value: UIBACK
+      objectReference: {fileID: 0}
+    - target: {fileID: -2789815117482271448, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: soundList.Array.data[6].name
+      value: MUSIC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2191218961779915774, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7811661368469911898, guid: d42223a5990417940aa244df837fc9fe, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d42223a5990417940aa244df837fc9fe, type: 3}
 --- !u!1 &942717715
 GameObject:
   m_ObjectHideFlags: 0
