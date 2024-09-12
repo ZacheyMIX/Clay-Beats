@@ -42,11 +42,11 @@ public class PlayerCursor : MonoBehaviour
     {
         if(ACanBePressed) 
         {
+            Destroy(currentObject);
             OnNoteHitted?.Invoke();
 
             Debug.Log(currentObject);
             ACanBePressed = false;
-            Destroy(currentObject);
             playSoundEffect(1);
             
         }

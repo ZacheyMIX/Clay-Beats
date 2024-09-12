@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private bool _playedFirstNote = false;
     private bool _startedSong = false;
     public float _startSongPosition;
+    [SerializeField] private Transform _leftCollideLane;
 
     [SerializeField] private AudioSource _currentSong;
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _startSongPosition = _leftCollideLane.position.y;
         StartCoroutine(PlayFirstNote());
     }
 
@@ -44,14 +46,21 @@ public class GameManager : MonoBehaviour
         _playerRight.PlayFirstNote();
     }
 
-    public void StartSong()
+
+    private IEnumerator StartSong()
+    {
+            _startedSong = true;
+        yield return new WaitForSeconds(0.5f);
+            Debug.Log("started Song!");
+            _currentSong.Play();
+        
+    }
+
+    public void CallStartSong()
     {
         if (!_startedSong)
         {
-            _startedSong = true;
-            Debug.Log("started Song!");
-            _currentSong.Play();
+            StartCoroutine(StartSong());
         }
-        
     }
 }

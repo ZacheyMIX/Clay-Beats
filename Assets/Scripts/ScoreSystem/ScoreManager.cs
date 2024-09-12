@@ -75,7 +75,8 @@ public class ScoreManager : MonoBehaviour
             clayControl.Progress = CalculateTotalClayProgress();
         });
 
-        //InitializePlayerScore(playerPos.PLAYER1, 100);
+        InitializePlayerScore(playerPos.PLAYER1, 100);
+        InitializePlayerScore(playerPos.PLAYER2, 100);
         //InvokeRepeating("TestHit", 0, 0.5f);
     }
 

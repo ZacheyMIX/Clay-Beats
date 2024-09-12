@@ -48,7 +48,7 @@ public class NotePlayer : MonoBehaviour
                     string _noteType = _notesToSpawn[0];
                     _noteManagerLeft.SpawnNote(_noteType, _noteSpeed);
                     _noteManagerRight.SpawnNote(_noteType, _noteSpeed);
-                _timesToSpawn.RemoveAt(0);
+                     _timesToSpawn.RemoveAt(0);
                     _notesToSpawn.RemoveAt(0);
                 }
 

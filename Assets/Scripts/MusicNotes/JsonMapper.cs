@@ -92,7 +92,6 @@ public class JsonMapper : MonoBehaviour
               float _noteTime = note.time;
 
               _notePlayerLeft._timesToSpawn.Add(_noteTime);
-              _notePlayerRight._timesToSpawn.Add(_noteTime);
 
             if (_noteName == "C4")
               {
@@ -128,11 +127,9 @@ public class JsonMapper : MonoBehaviour
             }
 
               _notePlayerLeft._notesToSpawn.Add(_noteName);
-              _notePlayerRight._notesToSpawn.Add(_noteName);
           }
 
            _notePlayerLeft._songDuration = duration.duration;
-            _notePlayerRight._songDuration = duration.duration;
 
 
     }

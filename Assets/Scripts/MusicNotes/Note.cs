@@ -12,7 +12,8 @@ public class Note : MonoBehaviour
     private float _startPosY;
     private bool _hasFailed;
     private float _currentSpeed;
-    private float _startSongPosition;
+    [SerializeField] private float _startSongPosition;
+    [SerializeField] private float _currentNotePosition;
     
     
     public void SetFallSpeed(float _newSpeed)
@@ -30,6 +31,8 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        _currentNotePosition = transform.position.y;
 
         if (_falling)
         {
@@ -50,8 +53,7 @@ public class Note : MonoBehaviour
         }
         else if(transform.position.y <= _startSongPosition)
         {
-            Debug.Log("StartedSong~");
-            GameManager.instance.StartSong();
+            GameManager.instance.CallStartSong();
         }
      
     }

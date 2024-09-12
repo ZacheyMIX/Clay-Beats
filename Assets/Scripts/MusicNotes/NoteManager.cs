@@ -37,6 +37,8 @@ public class NoteManager : MonoBehaviour
 
     public void SpawnNote(string _noteKey, float _noteSpeed)
     {
+        Debug.Log("SpawnNoted!");
+        
         //Creating the references for the spawned object and position
         GameObject _newObject = _noteObjects[_noteKey];
 
