@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerCursor : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class PlayerCursor : MonoBehaviour
         controls.Gameplay.BButton.performed += ctx => actionB();
         controls.Gameplay.XButton.performed += ctx => actionX();
         controls.Gameplay.YButton.performed += ctx => actionY();
+        controls.Gameplay.Start.performed += ctx => SceneManager.LoadScene("MainMenu");
 
     }
 
@@ -157,7 +159,7 @@ public class PlayerCursor : MonoBehaviour
         switch (condition)
         {
             case 0:
-                //SoundManager.PlaySound(SoundType.MISS);
+                SoundManager.PlaySound(SoundType.MISS);
                 break;
             case 1:
                 if (playerIndex == 0)

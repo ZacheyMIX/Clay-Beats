@@ -57,6 +57,14 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Start"",
+                    ""type"": ""Button"",
+                    ""id"": ""1aba309e-d69d-4a20-b414-e3ddfd2c3252"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -213,6 +221,28 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                     ""action"": ""YButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""71b3be62-13db-4e6e-9975-20d6d4c54ea2"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""02820c3b-93e6-47ca-8f0c-4e06ab56cc6a"",
+                    ""path"": ""<Keyboard>/backquote"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""New control scheme"",
+                    ""action"": ""Start"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -254,6 +284,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         m_Gameplay_BButton = m_Gameplay.FindAction("BButton", throwIfNotFound: true);
         m_Gameplay_XButton = m_Gameplay.FindAction("XButton", throwIfNotFound: true);
         m_Gameplay_YButton = m_Gameplay.FindAction("YButton", throwIfNotFound: true);
+        m_Gameplay_Start = m_Gameplay.FindAction("Start", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,6 +339,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
     private readonly InputAction m_Gameplay_BButton;
     private readonly InputAction m_Gameplay_XButton;
     private readonly InputAction m_Gameplay_YButton;
+    private readonly InputAction m_Gameplay_Start;
     public struct GameplayActions
     {
         private @PlayerControlls m_Wrapper;
@@ -317,6 +349,7 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         public InputAction @BButton => m_Wrapper.m_Gameplay_BButton;
         public InputAction @XButton => m_Wrapper.m_Gameplay_XButton;
         public InputAction @YButton => m_Wrapper.m_Gameplay_YButton;
+        public InputAction @Start => m_Wrapper.m_Gameplay_Start;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -341,6 +374,9 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @YButton.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnYButton;
                 @YButton.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnYButton;
                 @YButton.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnYButton;
+                @Start.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStart;
+                @Start.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStart;
+                @Start.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnStart;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +396,9 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
                 @YButton.started += instance.OnYButton;
                 @YButton.performed += instance.OnYButton;
                 @YButton.canceled += instance.OnYButton;
+                @Start.started += instance.OnStart;
+                @Start.performed += instance.OnStart;
+                @Start.canceled += instance.OnStart;
             }
         }
     }
@@ -389,5 +428,6 @@ public class @PlayerControlls : IInputActionCollection, IDisposable
         void OnBButton(InputAction.CallbackContext context);
         void OnXButton(InputAction.CallbackContext context);
         void OnYButton(InputAction.CallbackContext context);
+        void OnStart(InputAction.CallbackContext context);
     }
 }
