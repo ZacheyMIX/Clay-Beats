@@ -14,6 +14,8 @@ public class Note : MonoBehaviour
     private float _currentSpeed;
     [SerializeField] private float _startSongPosition;
     [SerializeField] private float _currentNotePosition;
+    [SerializeField] private Animator _anim;
+
     
     
     public void SetFallSpeed(float _newSpeed)
@@ -26,6 +28,7 @@ public class Note : MonoBehaviour
         _startSongPosition = GameManager.instance._startSongPosition;
         _startPosY = transform.position.y;
         _currentSpeed = 0;
+        _anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -62,10 +65,11 @@ public class Note : MonoBehaviour
     {
         BoxCollider _bc = GetComponent<BoxCollider>();
         _bc.enabled = false;
+        _anim.SetTrigger("fail");
+        Debug.Break();
         //play a destroy animation here!
         //play a destroy sfx here!
         //until animations are implemented, we will just disable sprite image
-        GetComponent<RawImage>().enabled = false;
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
 
