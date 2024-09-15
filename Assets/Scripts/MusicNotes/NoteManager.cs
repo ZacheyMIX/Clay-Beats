@@ -52,9 +52,11 @@ public class NoteManager : MonoBehaviour
          GameObject _newNote = GameObject.Instantiate(_noteObjects[_noteKey], _spawnerPosition, Quaternion.identity);
         _newNote.transform.SetParent(_spawnerTransform);
         _newNote.transform.localPosition = Vector3.zero;
+        _newNote.transform.localScale = _noteObjects[_noteKey].transform.localScale;
 
         //Setting the speed of each note to match the song!
         Note _noteScript = _newNote.GetComponent<Note>();
+        _noteScript.enabled = true;
         _noteScript.SetFallSpeed(_noteSpeed);
     }
 }
