@@ -3916,7 +3916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1821120521082798171, guid: 5bace7ff03071fc4c8cfe3839c9e70ec, type: 3}
       propertyPath: m_Name
-      value: NoteImage
+      value: YellowNoteRight
       objectReference: {fileID: 0}
     - target: {fileID: 1821120521082798171, guid: 5bace7ff03071fc4c8cfe3839c9e70ec, type: 3}
       propertyPath: m_IsActive
@@ -4067,6 +4067,8 @@ GameObject:
   m_Component:
   - component: {fileID: 821745192}
   - component: {fileID: 821745193}
+  - component: {fileID: 821745194}
+  - component: {fileID: 821745195}
   m_Layer: 0
   m_Name: ' NoteManagerRight'
   m_TagString: Untagged
@@ -4115,6 +4117,51 @@ MonoBehaviour:
   - {fileID: 799694545}
   - {fileID: 1815130755}
   - {fileID: 1869369527}
+--- !u!114 &821745194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821745191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 810b815b86649d84097e0722808b8aeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textJson: {fileID: 4900000, guid: 1c2ec8291a0d9a14fb0ae1587241e095, type: 3}
+  _spawnColors: []
+  _spawnTimes: []
+  _notePlayer: {fileID: 821745195}
+  duration:
+    duration: 0
+  _headerList:
+    header:
+      PPQ: 0
+      bpm: 0
+      name: 
+  _trackList:
+    tracks: []
+--- !u!114 &821745195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821745191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bd3f6464e8518e41a7e4130ac0cc305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _noteManager: {fileID: 821745193}
+  _timesToSpawn: []
+  _notesToSpawn: []
+  _currentSongTime: 0
+  _noteSpeed: 0
+  _started: 0
+  _ended: 0
+  _songDuration: 0
 --- !u!1 &825183482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1821120521082798171, guid: 5bace7ff03071fc4c8cfe3839c9e70ec, type: 3}
@@ -6795,8 +6842,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd3f6464e8518e41a7e4130ac0cc305, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _noteManagerLeft: {fileID: 1553009211}
-  _noteManagerRight: {fileID: 821745193}
+  _noteManager: {fileID: 1553009211}
   _timesToSpawn: []
   _notesToSpawn: []
   _currentSongTime: 0
@@ -6819,8 +6865,7 @@ MonoBehaviour:
   _textJson: {fileID: 4900000, guid: 1c2ec8291a0d9a14fb0ae1587241e095, type: 3}
   _spawnColors: []
   _spawnTimes: []
-  _notePlayerLeft: {fileID: 1553009212}
-  _notePlayerRight: {fileID: 1553009212}
+  _notePlayer: {fileID: 1553009212}
   duration:
     duration: 0
   _headerList:
@@ -7107,7 +7152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerLeft: {fileID: 1553009212}
-  _playerRight: {fileID: 1553009212}
+  _playerRight: {fileID: 821745195}
   _startSongPosition: 80
   _leftCollideLane: {fileID: 885224072}
   _currentSong: {fileID: 1706993620}

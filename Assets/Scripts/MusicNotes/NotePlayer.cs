@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class NotePlayer : MonoBehaviour
 {
-    [SerializeField] private NoteManager _noteManagerLeft;
-    [SerializeField] private NoteManager _noteManagerRight;
+    [SerializeField] private NoteManager _noteManager;
 
     public List<float> _timesToSpawn = new List<float>();
     public List<string> _notesToSpawn = new List<string>();
@@ -32,6 +31,7 @@ public class NotePlayer : MonoBehaviour
         {
             if (!_ended)
             {
+               
                 SongUpdate();
             }
         }
@@ -46,11 +46,11 @@ public class NotePlayer : MonoBehaviour
                 if(_difference <= 0.01f)
                 {
                     string _noteType = _notesToSpawn[0];
-                    _noteManagerLeft.SpawnNote(_noteType, _noteSpeed);
-                    _noteManagerRight.SpawnNote(_noteType, _noteSpeed);
+                    _noteManager.SpawnNote(_noteType, _noteSpeed);
                      _timesToSpawn.RemoveAt(0);
                     _notesToSpawn.RemoveAt(0);
-                }
+                    Debug.Log("StartedPlaying!!!: " + gameObject.name);
+            }
 
             }
         

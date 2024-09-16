@@ -9,8 +9,7 @@ public class JsonMapper : MonoBehaviour
 
     [SerializeField] private string[] _spawnColors;
     [SerializeField] private float[] _spawnTimes;
-    [SerializeField] private NotePlayer _notePlayerLeft;
-    [SerializeField] private NotePlayer _notePlayerRight;
+    [SerializeField] private NotePlayer _notePlayer;
 
 
     [System.Serializable]
@@ -81,6 +80,7 @@ public class JsonMapper : MonoBehaviour
 
     private void FillNotePlayer()
     {
+
         List<GameObject> _notesToSpawn = new List<GameObject>();
         List<float> _timesToSpawn = new List<float>();
 
@@ -91,7 +91,7 @@ public class JsonMapper : MonoBehaviour
               string _noteName = note.name;
               float _noteTime = note.time;
 
-              _notePlayerLeft._timesToSpawn.Add(_noteTime);
+              _notePlayer._timesToSpawn.Add(_noteTime);
 
             if (_noteName == "C4")
               {
@@ -126,11 +126,10 @@ public class JsonMapper : MonoBehaviour
                 _noteName = "Y";
             }
 
-              _notePlayerLeft._notesToSpawn.Add(_noteName);
+              _notePlayer._notesToSpawn.Add(_noteName);
           }
 
-           _notePlayerLeft._songDuration = duration.duration;
-
+           _notePlayer._songDuration = duration.duration;
 
     }
         
