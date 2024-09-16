@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4524816300414118528
+--- !u!114 &-2293932066774809623
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Paws_Mat
+  m_Name: OrangePaws_Mat
   m_Shader: {fileID: -6465566751694194690, guid: 6c494a9b2fd137942b31b10167f19bcc, type: 3}
   m_ShaderKeywords: _RECEIVE_SHADOWS_ON
   m_LightmapFlags: 4

@@ -24,6 +24,9 @@ public class PlayerCursor : MonoBehaviour
     [HideInInspector]
     public UnityEvent OnNoteHitted;
 
+    [SerializeField]
+    private Animator _pawAnim;
+
 
     private void Awake()
     {
@@ -51,6 +54,8 @@ public class PlayerCursor : MonoBehaviour
             Debug.Log(currentObject);
             ACanBePressed = false;
             playSoundEffect(1);
+
+            _pawAnim.SetTrigger("slap");
             
         }
     }
@@ -64,6 +69,8 @@ public class PlayerCursor : MonoBehaviour
             Debug.Log(currentObject);
             BCanBePressed = false;
             playSoundEffect(1);
+
+            _pawAnim.SetTrigger("slap");
         }
     }
     private void actionX()
@@ -76,6 +83,8 @@ public class PlayerCursor : MonoBehaviour
             Debug.Log(currentObject);
             XCanBePressed = false;
             playSoundEffect(1);
+
+            _pawAnim.SetTrigger("slap");
         }
     }
     private void actionY()
@@ -88,6 +97,8 @@ public class PlayerCursor : MonoBehaviour
             Debug.Log(currentObject);
             YCanBePressed = false;
             playSoundEffect(1);
+
+            _pawAnim.SetTrigger("slap");
         }
     }
 

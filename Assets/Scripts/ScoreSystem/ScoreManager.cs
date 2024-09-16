@@ -112,7 +112,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (p2ScoreText != null && p2Cursor != null)
         {
-            return (p1Score.ScoreProgress() + p2Score.ScoreProgress()) / 2;
+            return (p1Score.ScoreProgress() + p2Score.ScoreProgress());
         }
         else
             return p1Score.ScoreProgress();
