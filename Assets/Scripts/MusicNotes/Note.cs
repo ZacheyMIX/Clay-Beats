@@ -45,13 +45,13 @@ public class Note : MonoBehaviour
             transform.position = new Vector3(transform.position.x, _newYPos, transform.position.z);
         }
 
-        if(transform.position.y <= 50)
+        if(transform.position.y <= 100)
         {
             if (!_hasFailed) 
             {
                 //only let each note "die" one time
                 _hasFailed = true;
-                StartCoroutine(FailNote());
+                StartCoroutine(KillNote(false));
             }
         }
         else if(transform.position.y <= _startSongPosition)
@@ -61,12 +61,26 @@ public class Note : MonoBehaviour
      
     }
 
-    private IEnumerator FailNote()
+    public void CallKillNote(bool _hit)
+    {
+        _hasFailed = true;
+        StartCoroutine(KillNote(_hit));
+    }
+
+    private IEnumerator KillNote( bool _hit)
     {
         BoxCollider _bc = GetComponent<BoxCollider>();
         _bc.enabled = false;
+
+        if (_hit)
+        {
+            _anim.SetTrigger("hit");
+            _falling = false;
+        }
+        else
+        {
         _anim.SetTrigger("fail");
-        Debug.Break();
+        }
         //play a destroy animation here!
         //play a destroy sfx here!
         //until animations are implemented, we will just disable sprite image
@@ -74,6 +88,7 @@ public class Note : MonoBehaviour
         Destroy(gameObject);
 
     }
+
 
 
 }

@@ -44,7 +44,8 @@ public class PlayerCursor : MonoBehaviour
     {
         if(ACanBePressed) 
         {
-            Destroy(currentObject);
+            //Added this line so that instead of destroying the note here, we play a destroy animation first! - hayes
+            currentObject.GetComponent<Note>().CallKillNote(true);
             OnNoteHitted?.Invoke();
 
             Debug.Log(currentObject);
@@ -57,11 +58,11 @@ public class PlayerCursor : MonoBehaviour
     {
         if (BCanBePressed)
         {
+            currentObject.GetComponent<Note>().CallKillNote(true);
             OnNoteHitted?.Invoke();
 
             Debug.Log(currentObject);
             BCanBePressed = false;
-            Destroy(currentObject);
             playSoundEffect(1);
         }
     }
@@ -69,11 +70,11 @@ public class PlayerCursor : MonoBehaviour
     {
         if (XCanBePressed)
         {
+            currentObject.GetComponent<Note>().CallKillNote(true);
             OnNoteHitted?.Invoke();
 
             Debug.Log(currentObject);
             XCanBePressed = false;
-            Destroy(currentObject);
             playSoundEffect(1);
         }
     }
@@ -81,11 +82,11 @@ public class PlayerCursor : MonoBehaviour
     {
         if (YCanBePressed)
         {
+            currentObject.GetComponent<Note>().CallKillNote(true);
             OnNoteHitted?.Invoke();
 
             Debug.Log(currentObject);
             YCanBePressed = false;
-            Destroy(currentObject);
             playSoundEffect(1);
         }
     }
