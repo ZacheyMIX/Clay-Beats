@@ -45,7 +45,7 @@ public class Note : MonoBehaviour
             transform.position = new Vector3(transform.position.x, _newYPos, transform.position.z);
         }
 
-        if(transform.position.y <= 100)
+        if(transform.position.y <= 80)
         {
             if (!_hasFailed) 
             {
