@@ -70,12 +70,12 @@ public class JsonMapper : MonoBehaviour
     void Start()
     {
 
-        _trackList = JsonUtility.FromJson<TrackList>(_textJson.text);
-        _headerList = JsonUtility.FromJson<HeaderList>(_textJson.text);
-        duration = JsonUtility.FromJson<SongLength>(_textJson.text);
+       _headerList = JsonUtility.FromJson<HeaderList>(_textJson.text);
+       duration = JsonUtility.FromJson<SongLength>(_textJson.text);
+       _trackList = JsonUtility.FromJson<TrackList>(_textJson.text);
         
 
-        FillNotePlayer();
+       FillNotePlayer();
     }
 
     private void FillNotePlayer()
@@ -84,9 +84,15 @@ public class JsonMapper : MonoBehaviour
         List<GameObject> _notesToSpawn = new List<GameObject>();
         List<float> _timesToSpawn = new List<float>();
 
+
+        int _chosenTrack;
+
+        foreach (Track track in _trackList.tracks)
+        {
+           
         int i = 0;
 
-          foreach (Note note in _trackList.tracks[0].notes)
+          foreach (Note note in track.notes)
           {
               string _noteName = note.name;
               float _noteTime = note.time;
@@ -128,6 +134,9 @@ public class JsonMapper : MonoBehaviour
 
               _notePlayer._notesToSpawn.Add(_noteName);
           }
+        }
+
+
 
            _notePlayer._songDuration = duration.duration;
 

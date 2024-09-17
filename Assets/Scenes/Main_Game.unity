@@ -3728,7 +3728,7 @@ GameObject:
   - component: {fileID: 821745194}
   - component: {fileID: 821745195}
   m_Layer: 0
-  m_Name: ' NoteManagerRight'
+  m_Name: NoteManagerRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,7 +3787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b815b86649d84097e0722808b8aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textJson: {fileID: 4900000, guid: 1c2ec8291a0d9a14fb0ae1587241e095, type: 3}
+  _textJson: {fileID: 4900000, guid: 8bc4258ef9f0efe42925f30ac6977c66, type: 3}
   _spawnColors: []
   _spawnTimes: []
   _notePlayer: {fileID: 821745195}
@@ -6519,7 +6519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810b815b86649d84097e0722808b8aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textJson: {fileID: 4900000, guid: 1c2ec8291a0d9a14fb0ae1587241e095, type: 3}
+  _textJson: {fileID: 4900000, guid: 4a0cccdd90afc404cac95e2f6cd14f7b, type: 3}
   _spawnColors: []
   _spawnTimes: []
   _notePlayer: {fileID: 1553009212}
